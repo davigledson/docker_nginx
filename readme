@@ -1,8 +1,0 @@
-## Build da imagem
-docker build -t seu-nginx .
-
-## Executar o container
-docker run -d -p 80:80 seu-nginx
-
-## ver teste em navegador
-http://127.0.0.1/

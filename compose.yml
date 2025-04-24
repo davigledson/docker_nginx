@@ -1,0 +1,14 @@
+
+services:
+  web:
+    build: 
+      context: ./nginx
+    ports:
+      - "1010:80"
+
+    volumes:
+    - type: bind
+      source: ./www/
+      target: /usr/share/nginx/html/
+      read_only: true
+

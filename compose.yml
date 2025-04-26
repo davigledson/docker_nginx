@@ -2,13 +2,14 @@
 services:
   web:
     build: 
-      context: ./nginx
+      context: ./
+      dockerfile: ./Dockerfile
     ports:
       - "1010:80"
 
     volumes:
-    - type: bind
-      source: ./www/
-      target: /usr/share/nginx/html/
-      read_only: true
+      - ./www:/html
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
 
